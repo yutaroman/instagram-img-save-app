@@ -6,34 +6,52 @@
         <div class="l-Main">
             <div class="l-Main_Primary">
                 <form class="p-inputForm">
-                    <input type="text"
-                           name="instagram-url"
-                           v-model="inputUrl"
-                           placeholder="urlを入力してください"
-                           autocomplete="off">
-                    <button type="button"
-                            name="rewrite-button"
-                            v-on:click="clickHandler(inputUrl)">生成する</button>
+                    <input
+                        type="text"
+                        name="instagram-url"
+                        v-model="inputUrl"
+                        placeholder="urlを入力してください"
+                        autocomplete="off">
+                    <button
+                        type="button"
+                        name="rewrite-button"
+                        v-on:click="clickHandler(inputUrl)">生成する</button>
                 </form>
-                <p class="p-GenerateImage">
-                    <img v-bind:src="url" alt="">
-                </p>
+                <div class="p-GenerateImage">
+                    <img
+                        v-bind:src="imageUrl"
+                        alt="">
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+const ADD_PARAM = 'media/?size=l';
 export default {
     data() {
         return {
-            url: '',
+            imageUrl: '',
             inputUrl: '',
         }
     },
     methods: {
-        clickHandler: function(inputUrl) {
-            this.url = this.inputUrl
+        clickHandler(inputUrl) {
+            let url = this.inputUrl;
+
+            // パラメータが入っていれば削除
+            if (url.indexOf('?')) {
+                url = url.replace(/\?.*$/,"");
+            }
+
+            // 末尾にスラッシュが入ってなければ追加
+            if (url.substr(-1) !== '/') {
+                url = `${url}/`;
+            }
+
+            // imgタグに bind する変数を変更する
+            this.imageUrl = url + ADD_PARAM;
         }
     }
 }
