@@ -2,7 +2,7 @@
     <div class="app" id="app">
         <header class="l-Header">
             <div class="l-Header_Container">
-                <h1 class="h-Logo">Instagramの画像を保存するアプリケーション</h1>
+                <h1 class="h-Logo">Instagramで投稿された画像を保存するアプリケーション</h1>
             </div>
         </header>
         <main class="l-Main">
@@ -18,7 +18,7 @@
                         <button
                             type="button"
                             name="rewrite-button"
-                            v-on:click="clickHandler(inputUrl)">生成</button>
+                            v-on:click="setGenerateUrl(inputUrl)">生成</button>
                     </div>
                     <p class="p-GenerateImage">
                         <img
@@ -48,7 +48,7 @@
             }
         },
         methods: {
-            clickHandler(inputUrl) {
+            setGenerateUrl(inputUrl) {
                 let url = this.inputUrl;
 
                 if (url !== '') {
@@ -97,14 +97,15 @@
         box-sizing: border-box;
         background-color: #fff;
         border-bottom: 1px solid rgba(0, 0, 0, .0975);
-        min-height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
     .l-Header_Container {
         max-width: 1010px;
+        min-height: 50px;
         margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
     }
     .h-Logo {}
 
