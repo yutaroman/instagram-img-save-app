@@ -2,7 +2,11 @@
     <div class="app" id="app">
         <header class="l-Header">
             <div class="l-Header_Container">
-                <h1 class="h-Logo">Instagramで投稿された画像を保存するアプリケーション</h1>
+                <h1 class="h-Logo">
+                    <a href="/instagram-img-save-app/">
+                        <img src="./assets/logo.png" alt="インスタ画像ほぞん君" width="200" height="22">
+                    </a>
+                </h1>
             </div>
         </header>
         <main class="l-Main">
@@ -31,7 +35,7 @@
         <footer class="l-Footer">
             <div class="l-Footer_Container">
                 <p class="f-Copyright">
-                    <small>© 2018 yutaroman</small>
+                    <small>© 2018 <a href="https://github.com/yutaroman/" target="_blank">yutaroman</a></small>
                 </p>
             </div>
         </footer>
@@ -96,6 +100,7 @@
     .l-Header {
         box-sizing: border-box;
         background-color: #fff;
+        border-top: 1px solid rgba(0, 0, 0, .0975);
         border-bottom: 1px solid rgba(0, 0, 0, .0975);
     }
     .l-Header_Container {
@@ -107,7 +112,11 @@
         justify-content: center;
         position: relative;
     }
-    .h-Logo {}
+    .h-Logo {
+        img {
+            vertical-align: middle;
+        }
+    }
 
     .l-Main {
         margin-top: 40px;
@@ -155,7 +164,7 @@
             border: 1px solid #dbdbdb;
             text-align: center;
             color: #262626;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: bold;
             width: 15%;
             height: 30px;
