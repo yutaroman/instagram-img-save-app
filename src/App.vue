@@ -4,7 +4,7 @@
             <div class="l-Header_Container">
                 <h1 class="h-Logo">
                     <a href="/instagram-img-save-app/">
-                        <img src="./assets/logo.png" alt="インスタ画像ほぞん君" width="200" height="22">
+                        <img src="./assets/images/logo.png" alt="インスタ画像ほぞん君" width="200" height="22">
                     </a>
                 </h1>
             </div>
@@ -33,7 +33,7 @@
                     <p class="p-GenerateImage">
                         <img
                             v-if="imageUrl === ''"
-                            src="./assets/dummy.png"
+                            src="./assets/images/dummy.png"
                             alt="ダミー画像">
                         <img
                             v-else
@@ -161,7 +161,7 @@
             appearance: none;
         }
         [name="instagram-url"] {
-            background-image: url("./assets/icon-search.png");
+            background-image: url("./assets/images/icon-search.png");
             background-repeat: no-repeat;
             background-size: 10px;
             background-position: left 10px center;
