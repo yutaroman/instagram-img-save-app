@@ -17,15 +17,26 @@
                             type="text"
                             name="instagram-url"
                             v-model="inputUrl"
-                            placeholder="検索"
+                            placeholder="コピーしたリンクを貼り付け"
                             autocomplete="off">
-                        <button
-                            type="button"
-                            name="rewrite-button"
-                            v-on:click="setGenerateUrl(inputUrl)">生成</button>
+                        <div class="p-inputForm-button">
+                            <button
+                                type="button"
+                                name="rewrite-button"
+                                v-on:click="setGenerateUrl(inputUrl)">生成</button>
+                            <button
+                                type="button"
+                                name="reset-button"
+                                v-on:click="setResetUrl()">リセット</button>
+                        </div>
                     </div>
                     <p class="p-GenerateImage">
                         <img
+                            v-if="imageUrl === ''"
+                            src="./assets/dummy.png"
+                            alt="ダミー画像">
+                        <img
+                            v-else
                             v-bind:src="imageUrl"
                             alt="">
                     </p>
@@ -69,6 +80,10 @@
                     // imgタグに bind する変数を変更する
                     this.imageUrl = url + ADD_PARAM;
                 }
+            },
+            setResetUrl() {
+                this.imageUrl = '';
+                this.inputUrl = '';
             }
         }
     }
@@ -168,9 +183,27 @@
             font-weight: bold;
             width: 15%;
             height: 30px;
-            margin-top: 15px;
             cursor: pointer;
         }
+        [name="reset-button"] {
+            box-sizing: border-box;
+            border-radius: 3px;
+            border: 1px solid #dbdbdb;
+            text-align: center;
+            color: #262626;
+            font-size: 1.4rem;
+            font-weight: bold;
+            width: 15%;
+            height: 30px;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+    }
+    .p-inputForm-button {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 15px;
     }
     .p-GenerateImage {
         display: flex;
