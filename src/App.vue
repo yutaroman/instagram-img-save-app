@@ -35,7 +35,7 @@
         <footer class="l-Footer">
             <div class="l-Footer_Container">
                 <p class="f-Copyright">
-                    <small>© 2018 <a href="https://github.com/yutaroman/" target="_blank">yutaroman</a></small>
+                    <small>© 2019 <a href="https://github.com/yutaroman/" target="_blank">yutaroman</a></small>
                 </p>
             </div>
         </footer>
