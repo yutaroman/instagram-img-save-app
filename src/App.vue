@@ -88,6 +88,7 @@
     @import "./assets/styles/base.scss";
     .l-Main {
         margin-top: 40px;
+        padding: 0 20px;
         min-height: calc(100vh - 140px);
     }
     .l-Main_Container {
@@ -132,9 +133,9 @@
             border: 1px solid #dbdbdb;
             text-align: center;
             color: #262626;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            width: 15%;
+            width: 20%;
             height: 30px;
             cursor: pointer;
         }
@@ -144,9 +145,9 @@
             border: 1px solid #dbdbdb;
             text-align: center;
             color: #262626;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            width: 15%;
+            width: 20%;
             height: 30px;
             margin-left: 15px;
             cursor: pointer;
