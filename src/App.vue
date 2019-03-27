@@ -1,14 +1,6 @@
 <template>
     <div class="app" id="app">
-        <header class="l-Header">
-            <div class="l-Header_Container">
-                <h1 class="h-Logo">
-                    <a href="/instagram-img-save-app/">
-                        <img src="./assets/logo.png" alt="インスタ画像ほぞん君" width="200" height="22">
-                    </a>
-                </h1>
-            </div>
-        </header>
+        <layout-header></layout-header>
         <main class="l-Main">
             <div class="l-Main_Container">
                 <div class="l-Main_Primary">
@@ -33,7 +25,7 @@
                     <p class="p-GenerateImage">
                         <img
                             v-if="imageUrl === ''"
-                            src="./assets/dummy.png"
+                            src="./assets/images/dummy.png"
                             alt="ダミー画像">
                         <img
                             v-else
@@ -43,17 +35,18 @@
                 </div>
             </div>
         </main>
-        <footer class="l-Footer">
-            <div class="l-Footer_Container">
-                <p class="f-Copyright">
-                    <small>© 2019 <a href="https://github.com/yutaroman/" target="_blank">yutaroman</a></small>
-                </p>
-            </div>
-        </footer>
+        <layout-footer></layout-footer>
     </div>
 </template>
 
+
 <script>
+    import Vue from 'vue';
+    import LayoutHeader from './components/LayoutHeader.vue';
+    import LayoutFooter from './components/LayoutFooter.vue';
+    Vue.component('layout-header', LayoutHeader);
+    Vue.component('layout-footer', LayoutFooter);
+
     const ADD_PARAM = 'media/?size=l';
     export default {
         data() {
@@ -89,52 +82,13 @@
     }
 </script>
 
+
 <style lang="scss">
-    @import "./assets/reset.css";
-    html {
-        font-size: 62.5%;
-        height: 100%;
-    }
-    body {
-        font-family: "游ゴシック体", "Yu Gothic", "YuGothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", sans-serif;
-        font-size: 1.4rem;
-        color: #333;
-        line-height: 1.65;
-        min-width: 100%;
-        height: 100%;
-    }
-    img {
-        height: auto;
-        max-width: 100%;
-    }
-    #app {
-        min-height: 100%;
-        margin-bottom: -50px;
-    }
-
-    .l-Header {
-        box-sizing: border-box;
-        background-color: #fff;
-        border-top: 1px solid rgba(0, 0, 0, .0975);
-        border-bottom: 1px solid rgba(0, 0, 0, .0975);
-    }
-    .l-Header_Container {
-        max-width: 1010px;
-        min-height: 50px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
-    .h-Logo {
-        img {
-            vertical-align: middle;
-        }
-    }
-
+    @import "./assets/styles/reset.scss";
+    @import "./assets/styles/base.scss";
     .l-Main {
         margin-top: 40px;
+        padding: 0 20px;
         min-height: calc(100vh - 140px);
     }
     .l-Main_Container {
@@ -161,7 +115,7 @@
             appearance: none;
         }
         [name="instagram-url"] {
-            background-image: url("./assets/icon-search.png");
+            background-image: url("./assets/images/icon-search.png");
             background-repeat: no-repeat;
             background-size: 10px;
             background-position: left 10px center;
@@ -179,9 +133,9 @@
             border: 1px solid #dbdbdb;
             text-align: center;
             color: #262626;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            width: 15%;
+            width: 20%;
             height: 30px;
             cursor: pointer;
         }
@@ -191,9 +145,9 @@
             border: 1px solid #dbdbdb;
             text-align: center;
             color: #262626;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            width: 15%;
+            width: 20%;
             height: 30px;
             margin-left: 15px;
             cursor: pointer;
@@ -215,16 +169,4 @@
             max-height: 500px;
         }
     }
-
-    .l-Footer {
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .l-Footer_Container {
-        max-width: 1010px;
-        margin: 0 auto;
-    }
-    .f-Copyright {}
 </style>
