@@ -1,14 +1,6 @@
 <template>
     <div class="app" id="app">
-        <header class="l-Header">
-            <div class="l-Header_Container">
-                <h1 class="h-Logo">
-                    <a href="/instagram-img-save-app/">
-                        <img src="./assets/images/logo.png" alt="インスタ画像ほぞん君" width="200" height="22">
-                    </a>
-                </h1>
-            </div>
-        </header>
+        <layout-header></layout-header>
         <main class="l-Main">
             <div class="l-Main_Container">
                 <div class="l-Main_Primary">
@@ -43,17 +35,18 @@
                 </div>
             </div>
         </main>
-        <footer class="l-Footer">
-            <div class="l-Footer_Container">
-                <p class="f-Copyright">
-                    <small>© 2019 <a href="https://github.com/yutaroman/" target="_blank">yutaroman</a></small>
-                </p>
-            </div>
-        </footer>
+        <layout-footer></layout-footer>
     </div>
 </template>
 
+
 <script>
+    import Vue from 'vue';
+    import LayoutHeader from './components/LayoutHeader.vue';
+    import LayoutFooter from './components/LayoutFooter.vue';
+    Vue.component('layout-header', LayoutHeader);
+    Vue.component('layout-footer', LayoutFooter);
+
     const ADD_PARAM = 'media/?size=l';
     export default {
         data() {
@@ -89,30 +82,10 @@
     }
 </script>
 
+
 <style lang="scss">
     @import "./assets/styles/reset.scss";
     @import "./assets/styles/base.scss";
-    .l-Header {
-        box-sizing: border-box;
-        background-color: #fff;
-        border-top: 1px solid rgba(0, 0, 0, .0975);
-        border-bottom: 1px solid rgba(0, 0, 0, .0975);
-    }
-    .l-Header_Container {
-        max-width: 1010px;
-        min-height: 50px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
-    .h-Logo {
-        img {
-            vertical-align: middle;
-        }
-    }
-
     .l-Main {
         margin-top: 40px;
         min-height: calc(100vh - 140px);
@@ -195,16 +168,4 @@
             max-height: 500px;
         }
     }
-
-    .l-Footer {
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .l-Footer_Container {
-        max-width: 1010px;
-        margin: 0 auto;
-    }
-    .f-Copyright {}
 </style>
