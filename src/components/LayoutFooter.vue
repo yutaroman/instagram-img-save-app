@@ -8,12 +8,12 @@
 
 
 <script>
-    import Vue from 'vue';
     import FooterCopyright from './parts/FooterCopyright.vue';
-    Vue.component('footer-copyright', FooterCopyright);
-
     export default {
         name: 'layout-footer',
+        components: {
+            FooterCopyright,
+        }
     }
 </script>
 
