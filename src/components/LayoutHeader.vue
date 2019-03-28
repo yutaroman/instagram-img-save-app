@@ -8,12 +8,12 @@
 
 
 <script>
-    import Vue from 'vue';
     import HeaderLogo from './parts/HeaderLogo.vue';
-    Vue.component('header-logo', HeaderLogo);
-
     export default {
         name: 'layout-header',
+        components: {
+            HeaderLogo,
+        }
     }
 </script>
 
