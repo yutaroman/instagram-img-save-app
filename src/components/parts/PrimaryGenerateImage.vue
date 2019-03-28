@@ -2,7 +2,7 @@
     <p class="p-GenerateImage">
         <img
             v-if="imageUrl === ''"
-            src="../../assets/images/dummy.png"
+            src="@/assets/images/dummy.png"
             alt="ダミー画像">
         <img
             v-else
