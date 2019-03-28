@@ -3,13 +3,13 @@
         <input
             type="text"
             name="instagram-url"
-            v-model="url"
+            v-model="inputUrl"
             placeholder="コピーしたリンクを貼り付け"
             autocomplete="off">
         <div class="p-inputForm-button">
             <button
                 type="button"
-                name="rewrite-button"
+                name="generate-button"
                 v-on:click="generateHandler()">生成</button>
             <button
                 type="button"
@@ -24,19 +24,19 @@
     export default {
         name: 'primary-input-form',
         props: {
-            inputUrl: String,
             imageUrl: String,
         },
         data() {
             return {
-                url: '',
+                inputUrl: '',
             }
         },
         methods: {
             generateHandler() {
-                this.$emit('generate-event', this.url);
+                this.$emit('generate-event', this.inputUrl);
             },
             ResetHandler() {
+                this.inputUrl = '';
                 this.$emit('reset-event');
             },
         }
@@ -72,7 +72,13 @@
             height: 30px;
             padding: 0 30px;
         }
-        [name="rewrite-button"] {
+    }
+    .p-inputForm-button {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 15px;
+        [name="generate-button"] {
             box-sizing: border-box;
             border-radius: 3px;
             border: 1px solid #dbdbdb;
@@ -98,10 +104,5 @@
             cursor: pointer;
         }
     }
-    .p-inputForm-button {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin-top: 15px;
-    }
+
 </style>

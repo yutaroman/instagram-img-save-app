@@ -3,7 +3,6 @@
         <div class="l-Main_Container">
             <div class="l-Main_Primary">
                 <primary-input-form
-                    v-bind:inputUrl="inputUrl"
                     v-bind:imageUrl="imageUrl"
                     v-on:generate-event="generateUrl"
                     v-on:reset-event="resetUrl"></primary-input-form>
@@ -24,7 +23,6 @@
         data() {
             return {
                 imageUrl: '',
-                inputUrl: '',
             }
         },
         components: {
@@ -49,7 +47,6 @@
             },
             resetUrl() {
                 this.imageUrl = '';
-                this.inputUrl = '';
             },
         }
     }
